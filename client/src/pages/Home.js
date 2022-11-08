@@ -13,13 +13,16 @@ const Home = () => {
     <div className='home-container height-100'>
       <section className='logo-section center-flex'>
         <div className='img-container'>
-          <img src={logo} alt='logo.jpg' />
+          <h2>LOGO POP STAR STUDIO</h2>
         </div>
-        <div className='login-lang-container center-flex'>
+        <div className='video-container'>
+          <h1>video</h1>
+        </div>
+        <div className='logo-section-right center-flex'>
+          <LanguageSelector></LanguageSelector>
           <div className='login-btn'>
             <Text text_id='login-btn'></Text>
           </div>
-          <LanguageSelector></LanguageSelector>
         </div>
       </section>
       <section className='body-section'></section>
