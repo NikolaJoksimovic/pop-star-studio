@@ -3,7 +3,7 @@ import { languageOptions, dictionaryList } from "./languages";
 
 export const LanguageContext = createContext({
   userLanguage: "en",
-  dictionary: dictionaryList.en, //maybe change it later to dictionaryList[en], jsut to see
+  dictionary: dictionaryList["en"], //maybe change it later to dictionaryList[en], jsut to see
 });
 
 export function LanguageProvider({ children }) {

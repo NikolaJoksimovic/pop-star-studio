@@ -4,7 +4,7 @@
 
   --clr-primary: hsl(0, 0%, 0%);
   --clr-secondary: hsl(214, 13%, 78%);
-  --clr-lamp: hsl(51, 79%, 54%);
+  --clr-lamp: hsl(51, 100%, 39%);
   --clr-white: white;
   --clr-black: black;
 
@@ -12,6 +12,8 @@
   --margin-div: 1em;
 
   --shadow-div: 0 0 1em 0.5em var(--clr-primary);
+
+  --transition02: all 0.2s linear;
 }
 * {
   box-sizing: border-box;
@@ -22,6 +24,7 @@ body {
   font-family: var(--font-primary);
   background-color: var(--clr-secondary);
   color: var(--clr-white);
+  font-weight: 900;
 }
 h1 {
   font-size: 1.8rem;
@@ -50,12 +53,14 @@ h5 {
 .logo-section {
   width: 100%;
   justify-content: space-around;
+  flex: 0.5;
 
   background-color: var(--clr-primary);
   box-shadow: var(--shadow-div);
 }
 .logo-section .img-container {
   position: relative;
+  width: 70%;
   height: 13em;
 }
 .logo-section img {
@@ -73,13 +78,12 @@ h5 {
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
-
+/* LOGIN BUTTON */
 .login-btn {
   z-index: 999;
   position: relative;
   cursor: pointer;
 
-  font-weight: 900;
   font-size: 1.5rem;
   padding: 0.5em 0.4em 0.5em 0.4em;
   margin: var(--margin-div);
@@ -90,14 +94,42 @@ h5 {
   color: var(--clr-lamp);
   border-color: var(--clr-lamp);
 }
-@media screen and (max-width: 768px) {
-  .logo-section {
-    flex-direction: column;
-  }
-}
-
 .body-section {
   position: relative;
   height: calc(100vh - 13em);
   width: 100%;
+}
+.login-lang-container {
+  width: 30%;
+  flex-direction: column;
+}
+/* LANGUAGE SELECTOR */
+.language-selector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--padding-div);
+}
+.language-selector span {
+  cursor: pointer;
+  padding: 0.1em;
+  margin: 0.2em;
+  font-size: 1.2rem;
+}
+.span-active {
+  color: var(--clr-lamp);
+}
+
+@media screen and (max-width: 768px) {
+  .logo-section {
+    flex-direction: column;
+  }
+  .logo-section .img-container {
+    width: 90%;
+  }
+
+  /* LANGUAGE SELECTOR */
+  .login-lang-container {
+    width: auto;
+  }
 }
