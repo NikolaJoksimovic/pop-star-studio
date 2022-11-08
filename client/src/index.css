@@ -78,6 +78,7 @@ h5 {
   z-index: 999;
   position: relative;
   cursor: pointer;
+
   font-weight: 900;
   font-size: 1.5rem;
   padding: 0.5em 0.4em 0.5em 0.4em;
