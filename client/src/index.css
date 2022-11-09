@@ -3,16 +3,16 @@
   --font-primary: "Poor Story", cursive;
 
   --clr-primary: hsl(0, 0%, 0%);
-  --clr-secondary: hsl(214, 13%, 78%);
+  --clr-secondary: hsl(210, 54%, 5%);
   --clr-lamp: hsl(51, 100%, 39%);
-  --clr-white: white;
+  --clr-font: rgb(88, 88, 88);
   --clr-black: black;
 
   --padding-btn: 0.5em;
 
   --padding-div: 1em;
   --margin-div: 1em;
-  --border-div: 0.2rem solid var(--clr-white);
+  --border-div: 0.2rem solid var(--clr-font);
 
   --shadow-div: 0 0 1em 0.5em var(--clr-primary);
 
@@ -25,7 +25,7 @@
 }
 body {
   font-weight: 900;
-  color: var(--clr-white);
+  color: var(--clr-font);
   font-family: var(--font-primary);
   background-color: var(--clr-secondary);
 }
@@ -100,8 +100,9 @@ h5 {
   flex-direction: column;
 }
 .logo-section .img-container {
-  border: var(--border-div);
+  /* border: var(--border-div); */
   margin: var(--margin-div);
+  color: var(--clr-lamp);
 }
 .logo-section .video-container {
   height: 150px;
@@ -126,8 +127,8 @@ h5 {
 
   font-size: 1.5rem;
   padding: var(--padding-btn);
-  border: 0.2rem solid var(--clr-white);
-  color: var(--clr-white);
+  border: 0.2rem solid var(--clr-font);
+  color: var(--clr-font);
 }
 .login-btn:hover {
   color: var(--clr-lamp);
