@@ -15,13 +15,15 @@ const Home = () => {
         <div className='img-container'>
           <h2>LOGO POP STAR STUDIO</h2>
         </div>
-        <div className='video-container'>
-          <h1>video</h1>
-        </div>
-        <div className='logo-section-right center-flex'>
-          <LanguageSelector></LanguageSelector>
-          <div className='login-btn'>
-            <Text text_id='login-btn'></Text>
+        <div className='video-login-container center-flex'>
+          <div className='video-container'>
+            <h1>video</h1>
+          </div>
+          <div className='logo-section-right center-flex'>
+            <LanguageSelector></LanguageSelector>
+            <div className='login-btn'>
+              <Text text_id='login-btn'></Text>
+            </div>
           </div>
         </div>
       </section>

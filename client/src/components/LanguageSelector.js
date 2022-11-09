@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { languageOptions } from "../languages";
 import { LanguageContext } from "../language";
 
 export default function LanguageSelector() {
