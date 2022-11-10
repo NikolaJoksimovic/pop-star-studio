@@ -1,6 +1,6 @@
 const User = require("../model/user");
 const { StatusCodes } = require("http-status-codes");
-const { BadRequestError } = require("../errors/index");
+const { BadRequestError, AuthenicationError } = require("../errors/index");
 const { v4: uuidv4 } = require("uuid");
 
 const createLoginUser = async (req, res) => {
@@ -9,8 +9,9 @@ const createLoginUser = async (req, res) => {
   // LOGIN USER
   let user = await User.findOne({ username: username });
   if (user) {
-    const passwordsMatch = user.comparePasswords(password);
-    if (passwordsMatch) {
+    const passwordsMatch = await user.comparePasswords(password);
+    if (!passwordsMatch) {
+      throw new AuthenicationError("Password does not match the username.");
     }
   } else {
     // CREATE USER
@@ -29,7 +30,7 @@ const createLoginUser = async (req, res) => {
 
   const token = user.getJWToken();
 
-  res.status(StatusCodes.CREATED).json({ user: { ...req.body }, token: token });
+  res.status(StatusCodes.CREATED).json({ userId: user.user_id, token: token });
 };
 
 const getGreetingMsg = async (req, res) => {

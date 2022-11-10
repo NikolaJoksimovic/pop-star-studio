@@ -38,8 +38,9 @@ userSchema.methods.getJWToken = function () {
     process.env.JWT_SECRET
   );
 };
-userSchema.methods.comparePasswords = function (checkPassword) {
-  const isMatch = bcrypt.compare(checkPassword, this.password);
+userSchema.methods.comparePasswords = async function (checkPassword) {
+  const isMatch = await bcrypt.compare(checkPassword, this.password);
+  console.log(isMatch);
   return isMatch;
 };
 module.exports = mongoose.model("User", userSchema);
