@@ -10,7 +10,9 @@ const Home = () => {
   const [authToken, setAuthToken] = useState(true);
   // onCLick
   const handleClick = () => {
-    navigate("/auth");
+    if (authToken) {
+      navigate("/auth");
+    }
   };
 
   return (

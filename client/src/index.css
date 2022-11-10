@@ -9,10 +9,14 @@
   --clr-black: black;
 
   --padding-btn: 0.5em;
-
   --padding-div: 1em;
+  --padding-input: 0.3em;
+
   --margin-div: 1em;
+  --margin-input: 0.5em;
+
   --border-div: 0.2rem solid var(--clr-font);
+  --border-input: 0.2rem solid var(--clr-font);
 
   --shadow-div: 0 0 1em 0.5em var(--clr-primary);
 
@@ -86,7 +90,7 @@ h5 {
     font-size: 1.3rem;
   }
 }
-/* HOME */
+/* HOME PAGE*/
 #user-name {
   z-index: 999;
   position: fixed;
@@ -112,7 +116,7 @@ h5 {
   width: 100%;
   flex-direction: column;
 }
-.logo-section .img-container {
+.img-container {
   /* border: var(--border-div); */
   margin: var(--margin-div);
   color: var(--clr-lamp);
@@ -213,4 +217,23 @@ h5 {
   .language-selector span {
     font-size: 1.8rem;
   }
+}
+
+/* AUTHENTICATION PAGE */
+#auth-section {
+  flex-direction: column;
+}
+.form-container {
+  padding: var(--padding-div);
+  margin: var(--margin-div);
+}
+#auth-section form {
+  flex-direction: column;
+}
+.text-container {
+  padding: var(--padding-div);
+  margin: var(--margin-div);
+}
+.text-container h1 {
+  max-width: 300px;
 }

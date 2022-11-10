@@ -1,5 +1,6 @@
 {
   "login-btn": "login/register",
   "logout-btn": "logout",
-  "user-name-span": "user: "
+  "user-name-span": "user: ",
+  "auth-h1": "Log in or create a user. Become a Pop Star Stuido member."
 }

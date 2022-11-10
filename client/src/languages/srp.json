@@ -1,5 +1,6 @@
 {
   "login-btn": "prijava/registracija",
   "logout-btn": "odjava",
-  "user-name-span": "korisnik: "
+  "user-name-span": "korisnik: ",
+  "auth-h1": "Uloguj se ili kreiraj nalog. Postani  clan Pop Star Studia."
 }

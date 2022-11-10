@@ -5,7 +5,7 @@ import { LanguageContext } from "../language";
 export default function LanguageSelector() {
   // you get the provider that has userLanguage and userLanguageChange
 
-  const { userLanguage, userLanguageChange } = useContext(LanguageContext);
+  const { userLanguageChange } = useContext(LanguageContext);
   const [langOpt, setLangOpt] = useState("");
 
   const handleClick = (e) => {
