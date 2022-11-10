@@ -4,6 +4,7 @@ require("express-async-errors");
 const express = require("express");
 const connectDB = require("./db/connectDB");
 const mainRouter = require("./routes/mainRoutes");
+const authRouter = require("./routes/authRoutes");
 const errorHandlerMiddleware = require("./middleware/errorHandler");
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(express.static("public/build"));
 
 // routes
 app.use("/", mainRouter);
+app.use("/auth", authRouter);
 
 //middleware
 app.use(errorHandlerMiddleware);

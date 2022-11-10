@@ -164,9 +164,11 @@ h5 {
   z-index: 999;
   cursor: pointer;
   height: 50%;
+  min-width: 120px;
 
   font-size: 1.5rem;
   font-weight: 700;
+  text-align: center;
   padding: var(--padding-btn);
   border: 0.2rem solid var(--clr-font);
   color: var(--clr-font);
