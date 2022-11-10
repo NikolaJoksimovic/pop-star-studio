@@ -28,7 +28,7 @@ userSchema.plugin(uniqueValidator);
 // middleware
 userSchema.pre("save", async function () {
   const salt = await bcrypt.genSalt(10);
-  this.password = bcrypt.hash(this.password, salt);
+  this.password = await bcrypt.hash(this.password, salt); // await has to be there even if it says it has no effect!
 });
 
 // methods

@@ -11,7 +11,9 @@ const createLoginUser = async (req, res) => {
   if (user) {
     const passwordsMatch = await user.comparePasswords(password);
     if (!passwordsMatch) {
-      throw new AuthenicationError("Password does not match the username.");
+      throw new AuthenicationError(
+        "Username does exist, but the password does not match the username."
+      );
     }
   } else {
     // CREATE USER
