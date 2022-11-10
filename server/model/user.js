@@ -1,6 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const userSchema = mongoose.Schema({
   user_id: {
@@ -24,10 +26,20 @@ const userSchema = mongoose.Schema({
 userSchema.plugin(uniqueValidator);
 
 // middleware
+userSchema.pre("save", async function () {
+  const salt = await bcrypt.genSalt(10);
+  this.password = bcrypt.hash(this.password, salt);
+});
 
 // methods
 userSchema.methods.getJWToken = function () {
-  return jwt.sign();
+  return jwt.sign(
+    { id: this.user_id, username: this.username },
+    process.env.JWT_SECRET
+  );
 };
-
+userSchema.methods.comparePasswords = function (checkPassword) {
+  const isMatch = bcrypt.compare(checkPassword, this.password);
+  return isMatch;
+};
 module.exports = mongoose.model("User", userSchema);
