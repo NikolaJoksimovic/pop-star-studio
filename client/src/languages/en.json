@@ -1,3 +1,5 @@
 {
-  "login-btn": "login/register"
+  "login-btn": "login/register",
+  "logout-btn": "logout",
+  "user-name-span": "user: "
 }

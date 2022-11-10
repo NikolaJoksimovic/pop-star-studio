@@ -32,7 +32,9 @@ const createLoginUser = async (req, res) => {
 
   const token = user.getJWToken();
 
-  res.status(StatusCodes.CREATED).json({ userId: user.user_id, token: token });
+  res
+    .status(StatusCodes.CREATED)
+    .json({ username: user.username, token: token });
 };
 
 const getGreetingMsg = async (req, res) => {

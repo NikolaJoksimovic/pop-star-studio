@@ -87,6 +87,19 @@ h5 {
   }
 }
 /* HOME */
+#user-name {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: var(--padding-div);
+
+  text-align: end;
+  color: var(--clr-lamp);
+}
+#user-name span {
+  font-size: 0.8em;
+}
 .logo-section {
   width: 100%;
   position: relative;
