@@ -14,9 +14,11 @@ const Authenication = () => {
           <input type='text' />
           <label htmlFor=''>password</label>
           <input type='password' />
+          <button type='submit' className='primary-btn'>
+            <Text text_id='auth-btn'>DEFAULT</Text>
+          </button>
         </form>
       </div>
-      <button>DEFAULT</button>
       <div className='img-container'>
         <h2>LOGO POP STAR STUDIO</h2>
       </div>

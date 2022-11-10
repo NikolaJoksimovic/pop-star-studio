@@ -15,6 +15,7 @@
   --margin-div: 1em;
   --margin-input: 0.5em;
 
+  --border-btn: 0.2rem solid var(--clr-font);
   --border-div: 0.2rem solid var(--clr-font);
   --border-input: 0.2rem solid var(--clr-font);
 
@@ -64,6 +65,19 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.primary-btn {
+  background-color: transparent;
+  padding: var(--padding-btn);
+  border: var(--border-btn);
+  color: var(--clr-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+.primary-btn:hover {
+  border-color: var(--clr-lamp);
+  color: var(--clr-lamp);
 }
 @media screen and (min-width: 768px) {
   h1 {
@@ -152,6 +166,7 @@ h5 {
   height: 50%;
 
   font-size: 1.5rem;
+  font-weight: 700;
   padding: var(--padding-btn);
   border: 0.2rem solid var(--clr-font);
   color: var(--clr-font);
@@ -184,7 +199,8 @@ h5 {
   .video-login-container {
     flex-direction: row;
   }
-  .login-btn {
+  .login-btn,
+  .primary-btn {
     font-size: 1.7rem;
   }
   .language-selector {
@@ -210,10 +226,12 @@ h5 {
     margin: 0;
   }
   .login-btn {
-    font-size: 1.7rem;
     position: absolute;
     right: 0;
     bottom: 0;
+    font-size: 1.9rem;
+  }
+  .primary-btn {
     font-size: 1.9rem;
   }
   .language-selector {
@@ -236,9 +254,19 @@ h5 {
 .form-container {
   padding: var(--padding-div);
   margin: var(--margin-div);
+  width: 100%;
 }
 #auth-section form {
   flex-direction: column;
+}
+#auth-section form input {
+  width: 90%;
+  max-width: 350px;
+  padding: var(--padding-input);
+  margin: var(--margin-input);
+}
+#auth-section form button {
+  margin: 2.5em 0 0 0;
 }
 .text-container {
   padding: var(--padding-div);
