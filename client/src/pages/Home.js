@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div className='home-container height-100'>
+    <div className='home-container height-90'>
       {authToken && (
         <h3 id='user-name'>
           <span>

@@ -2,5 +2,6 @@
   "login-btn": "prijava/registracija",
   "logout-btn": "odjava",
   "user-name-span": "korisnik: ",
-  "auth-h1": "Uloguj se ili kreiraj nalog. Postani  clan Pop Star Studia."
+  "auth-h1": "Uloguj se ili kreiraj nalog. Postani  clan Pop Star Studia.",
+  "shared-footer": "Copryright 2022 Pop Star Studio. All rights reserved."
 }

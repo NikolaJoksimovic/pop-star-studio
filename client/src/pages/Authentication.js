@@ -2,7 +2,7 @@ import { Text } from "../language";
 
 const Authenication = () => {
   return (
-    <section id='auth-section' className=' center-flex height-100'>
+    <section id='auth-section' className=' center-flex height-90'>
       <div className='text-container'>
         <h1>
           <Text text_id='auth-h1'>DEFAULT</Text>
