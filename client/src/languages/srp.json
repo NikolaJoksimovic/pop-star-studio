@@ -4,5 +4,12 @@
   "user-name-span": "korisnik: ",
   "auth-h1": "Uloguj se ili kreiraj nalog. Postani  clan Pop Star Studia.",
   "shared-footer": "Copryright 2022 Pop Star Studio. All rights reserved.",
-  "auth-btn": "prijava/registracija"
+  "auth-btn": "prijava/registracija",
+  "auth-error1": "Korisnicko ime prekratko. Minimalan broj karaktera(3)",
+  "auth-error2": "Korisnicko ime predugacko. Maksimalan broj karaktera(15)",
+  "auth-error3": "Morate uneti korisnicko ime.",
+  "auth-error4": "Lozinka prekratka. Minimalan broj karaktera(3)",
+  "auth-error5": "Morate uneti lozinku.",
+  "auth-error6": "Lozinka ne odgovara korisnickom imenu.",
+  "auth-error7": "Greska sa serverom. Molimo Vas pokusajte kasnije."
 }

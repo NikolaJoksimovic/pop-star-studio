@@ -11,9 +11,7 @@ const createLoginUser = async (req, res) => {
   if (user) {
     const passwordsMatch = await user.comparePasswords(password);
     if (!passwordsMatch) {
-      throw new AuthenicationError(
-        "Username does exist, but the password does not match the username."
-      );
+      throw new AuthenicationError("auth-error5");
     }
   } else {
     // CREATE USER
@@ -24,9 +22,7 @@ const createLoginUser = async (req, res) => {
       password: password,
     });
     if (!user) {
-      throw new BadRequestError(
-        "Something went wrong, please try again later."
-      );
+      throw new BadRequestError("auth-error-7");
     }
   }
 

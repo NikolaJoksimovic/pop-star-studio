@@ -11,7 +11,7 @@ const errorHandlerMiddleware = async (err, req, res, next) => {
     let errorMsg = "";
     Object.entries(err.errors).forEach(([key, value]) => {
       console.log(value.message);
-      errorMsg = errorMsg + `${value.message}` + "\n";
+      errorMsg = errorMsg + `${value.message}`;
     });
     customError.msg = errorMsg;
   }

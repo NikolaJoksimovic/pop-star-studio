@@ -1,5 +1,5 @@
 import { Text } from "../contex/language";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CookieContex } from "../contex/cookies";
 import axios from "axios";
@@ -7,9 +7,9 @@ import axios from "axios";
 const Authenication = () => {
   // variables
   const navigate = useNavigate();
-  const location = useLocation();
   const [input, setInput] = useState({ username: "", password: "" });
   const { setCookie } = useContext(CookieContex);
+  const [errMsg, setErrMsg] = useState("errMsg");
   // URL
   let url = "http://localhost:8000";
   // functions
@@ -27,7 +27,10 @@ const Authenication = () => {
         });
       }
     } catch (error) {
-      console.log(error);
+      // crazy stuff
+      let err = JSON.stringify(error.response.data.msg);
+      err = err.substring(1, err.length - 1);
+      setErrMsg(err);
     }
   };
   const handleChange = (e) => {
@@ -35,8 +38,6 @@ const Authenication = () => {
     const value = e.target.value;
     setInput({ ...input, [key]: value });
   };
-  // useEffect
-
   return (
     <section id='auth-section' className=' center-flex height-90'>
       <div className='text-container'>
@@ -62,6 +63,12 @@ const Authenication = () => {
             value={input.password}
             onChange={handleChange}
           />
+          <div className='auth-error-container'>
+            <h4>
+              <Text text_id={errMsg}>DEFAULT</Text>
+              {/* <Text text_id='auth-error2'>DEFAULT</Text> */}
+            </h4>
+          </div>
           <button type='submit' className='primary-btn' onClick={handleClick}>
             <Text text_id='auth-btn'>DEFAULT</Text>
           </button>

@@ -4,5 +4,12 @@
   "user-name-span": "user: ",
   "auth-h1": "Log in or create an account. Become a Pop Star Stuido member.",
   "shared-footer": "Copryright 2022 Pop Star Studio. All rights reserved.",
-  "auth-btn": "login/register"
+  "auth-btn": "login/register",
+  "auth-error1": "Username too short. Minimum characters(3)",
+  "auth-error2": "Username too long. Maximum characters(15)",
+  "auth-error3": "Username must be provided.",
+  "auth-error4": "Password too short. Minimum cdharacters(3)",
+  "auth-error5": "Password must be provided.",
+  "auth-error6": "Password does not match the username",
+  "auth-error7": "Something went wrong, please try again later."
 }

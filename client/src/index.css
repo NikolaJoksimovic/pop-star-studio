@@ -277,6 +277,11 @@ h5 {
 .text-container h1 {
   max-width: 550px;
 }
+.auth-error-container {
+  width: 80%;
+  max-width: 530px;
+  text-align: center;
+}
 
 /* SHAREDFOOTER PAGE */
 #shared-footer {
