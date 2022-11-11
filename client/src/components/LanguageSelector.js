@@ -10,11 +10,11 @@ export default function LanguageSelector() {
 
   const handleClick = (e) => {
     const targetId = e.target.id;
+    setLangOpt(targetId);
+    userLanguageChange(targetId);
     if (targetId !== langOpt) {
       document.querySelector(`#${langOpt}`).classList.remove("span-active");
     }
-    userLanguageChange(targetId);
-    setLangOpt(targetId);
   };
 
   const selectedLangEl = document.getElementById(`${langOpt}`);

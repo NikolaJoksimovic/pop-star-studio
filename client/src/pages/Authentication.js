@@ -15,7 +15,7 @@ const Authenication = () => {
     0,
     window.location.href.lastIndexOf("/")
   );
-  console.log(url);
+  // console.log(url);
   // url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {

@@ -22,12 +22,16 @@ const Home = () => {
   };
   // useEffect
   useEffect(() => {
+    if (!window.localStorage.getItem("lang-opt")) {
+      window.localStorage.setItem("lang-opt", "en");
+    }
+  }, []);
+  useEffect(() => {
     if (cookies.token) {
       setAuthToken(!authToken);
       setUserName(location?.state.username);
     }
   }, [cookies]);
-
   return (
     <div className='home-container height-90'>
       {authToken && (
