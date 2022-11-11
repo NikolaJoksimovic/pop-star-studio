@@ -11,7 +11,12 @@ const Authenication = () => {
   const { setCookie } = useContext(CookieContex);
   const [errMsg, setErrMsg] = useState("errMsg");
   // URL
-  let url = "http://localhost:8000";
+  let url = window.location.href.substring(
+    0,
+    window.location.href.lastIndexOf("/")
+  );
+  console.log(url);
+  // url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
