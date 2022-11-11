@@ -32,11 +32,10 @@ const Authenication = () => {
         });
       }
     } catch (error) {
-      console.log(error);
       // crazy stuff
-      // let err = JSON.stringify(error.response.data.msg);
-      // err = err.substring(1, err.length - 1);
-      // setErrMsg(err);
+      let err = JSON.stringify(error.response.data.msg);
+      err = err.substring(1, err.length - 1);
+      setErrMsg(err);
     }
   };
   const handleChange = (e) => {
