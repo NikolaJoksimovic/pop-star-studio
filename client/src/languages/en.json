@@ -2,7 +2,7 @@
   "login-btn": "login/register",
   "logout-btn": "logout",
   "user-name-span": "user: ",
-  "auth-h1": "Log in or create a user. Become a Pop Star Stuido member.",
+  "auth-h1": "Log in or create an account. Become a Pop Star Stuido member.",
   "shared-footer": "Copryright 2022 Pop Star Studio. All rights reserved.",
   "auth-btn": "login/register"
 }

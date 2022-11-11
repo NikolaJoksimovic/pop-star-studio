@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { LanguageContext } from "../language";
+import { LanguageContext } from "../contex/language";
 
 export default function LanguageSelector() {
   // you get the provider that has userLanguage and userLanguageChange
@@ -23,7 +23,7 @@ export default function LanguageSelector() {
   useEffect(() => {
     setLangOpt(window.localStorage.getItem("lang-opt"));
   }, [langOpt]);
-  // Object.entries() je kao array.forEach ali za objekte.
+
   return (
     <div className='language-selector' onClick={handleClick}>
       <span id='en' onClick={handleClick}>

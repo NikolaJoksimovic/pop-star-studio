@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import { Text } from "../language";
-import { useNavigate } from "react-router-dom";
+import { Text } from "../contex/language";
+import { useNavigate, useLocation } from "react-router-dom";
 import LanguageSelector from "../components/LanguageSelector";
+import { CookieContex } from "../contex/cookies";
 
 const Home = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [userName, setUserName] = useState("joksa");
-  const [authToken, setAuthToken] = useState(true);
+  const [authToken, setAuthToken] = useState(false);
+  const { cookies, removeCookie } = useContext(CookieContex);
   // onCLick
   const handleClick = () => {
-    if (authToken) {
+    if (!authToken) {
       navigate("/auth");
+    } else {
+      setAuthToken(false);
+      removeCookie("token");
     }
   };
+  // useEffect
+  useEffect(() => {
+    if (cookies.token) {
+      setAuthToken(!authToken);
+      setUserName(location?.state.username);
+    }
+  }, [cookies]);
 
   return (
     <div className='home-container height-90'>

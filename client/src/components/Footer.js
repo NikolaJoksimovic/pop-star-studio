@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "../language";
+import { Text } from "../contex/language";
 
 const Footer = () => {
   return (

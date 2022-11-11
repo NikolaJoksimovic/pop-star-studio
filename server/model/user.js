@@ -35,7 +35,10 @@ userSchema.pre("save", async function () {
 userSchema.methods.getJWToken = function () {
   return jwt.sign(
     { id: this.user_id, username: this.username },
-    process.env.JWT_SECRET
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_LIFESPAN,
+    }
   );
 };
 userSchema.methods.comparePasswords = async function (checkPassword) {

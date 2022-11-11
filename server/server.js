@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("express-async-errors");
+const cors = require("cors");
 
 const express = require("express");
 const connectDB = require("./db/connectDB");
@@ -11,6 +12,7 @@ const app = express();
 
 app.use(express.json()); // dolaze podaci kao string i onda ih parsiramo u JS objekat
 app.use(express.static("public/build"));
+app.use(cors());
 
 // routes
 app.use("/", mainRouter);

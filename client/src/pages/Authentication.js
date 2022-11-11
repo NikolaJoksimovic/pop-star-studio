@@ -1,19 +1,31 @@
-import { Text } from "../language";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Text } from "../contex/language";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useContext, useState } from "react";
+import { CookieContex } from "../contex/cookies";
 import axios from "axios";
 
 const Authenication = () => {
   // variables
   const navigate = useNavigate();
+  const location = useLocation();
   const [input, setInput] = useState({ username: "", password: "" });
+  const { setCookie } = useContext(CookieContex);
+  // URL
+  let url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/");
-      navigate("/");
+      const response = await axios.post(`${url}/auth/createlogin`, input);
+      if (response) {
+        setCookie("token", response.data.token);
+        navigate("/", {
+          state: {
+            username: response.data.username,
+          },
+        });
+      }
     } catch (error) {
       console.log(error);
     }
