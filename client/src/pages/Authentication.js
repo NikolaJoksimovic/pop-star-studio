@@ -25,11 +25,8 @@ const Authenication = () => {
       const response = await axios.post(`${url}/auth/createlogin`, input);
       if (response) {
         setCookie("token", response.data.token);
-        navigate("/", {
-          state: {
-            username: response.data.username,
-          },
-        });
+        setCookie("username", response.data.username);
+        navigate("/");
       }
     } catch (error) {
       // crazy stuff

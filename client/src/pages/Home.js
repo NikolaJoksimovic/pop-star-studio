@@ -29,7 +29,7 @@ const Home = () => {
   useEffect(() => {
     if (cookies.token) {
       setAuthToken(!authToken);
-      setUserName(location?.state.username);
+      setUserName(cookies.username);
     }
   }, [cookies]);
   return (
