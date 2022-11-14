@@ -269,14 +269,16 @@ h5 {
   cursor: pointer;
 }
 .drop-section {
-  display: none;
+  display: flex;
   flex-direction: column;
+  height: 0;
+  overflow: hidden;
   width: 100%;
-  height: fit-content;
-  border-top: 0.1rem solid var(--clr-font);
+  transition: var(--transition02);
 }
 .drop-section-show {
-  display: flex;
+  border-top: 0.1rem solid var(--clr-font);
+  /* height: fit-content; */
 }
 @media screen and (min-width: 1080px) {
   .body-section {
