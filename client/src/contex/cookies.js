@@ -7,7 +7,7 @@ export const CookieContex = createContext({
 
 export function CookieProvider({ children }) {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  const [reload, setReload] = useState(false);
+  const [reload, setReload] = useState(true);
 
   const provider = {
     reload,

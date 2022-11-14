@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react";
-import { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Text } from "../contex/language";
-import { useNavigate, useLocation } from "react-router-dom";
-import LanguageSelector from "../components/LanguageSelector";
+import { Link, useNavigate } from "react-router-dom";
 import { CookieContex } from "../contex/cookies";
+import LanguageSelector from "../components/LanguageSelector";
+import DropSection from "../components/DropSection";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const Home = () => {
   }, []);
   useEffect(() => {
     if (cookies.token) {
+      // console.log("relaod");
       setUserName(cookies.username);
       setAuthToken(!authToken);
     }
@@ -71,7 +72,23 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='body-section'></section>
+      <section className='body-section'>
+        <DropSection name='drop-section-1'>
+          <Link>
+            <h3>zavrseni projekti</h3>
+          </Link>
+          <Link>
+            <h3>o studiju</h3>
+          </Link>
+        </DropSection>
+        <DropSection name='drop-section-2'>
+          <Link>
+            <h3>snimanje zvuka</h3>
+          </Link>
+        </DropSection>
+        <DropSection name='drop-section-3'></DropSection>
+        <DropSection name='drop-section-4'></DropSection>
+      </section>
     </div>
   );
 };

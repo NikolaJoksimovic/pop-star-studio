@@ -22,8 +22,8 @@ const Authenication = () => {
       if (response) {
         setCookie("token", response.data.token);
         setCookie("username", response.data.username);
-        setReload(!reload);
         navigate("/");
+        setReload(true);
       }
     } catch (error) {
       // Ovo moram jos da sredim kada ima vise od jednog errora...
