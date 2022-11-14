@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CookieContex } from "../contex/cookies";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 const Authenication = () => {
   // variables
@@ -76,6 +77,7 @@ const Authenication = () => {
       <div className='img-container'>
         <h2>LOGO POP STAR STUDIO</h2>
       </div>
+      <Footer></Footer>
     </section>
   );
 };
