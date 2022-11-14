@@ -288,6 +288,7 @@ h5 {
   }
   .drop-section-container {
     width: 200px;
+    text-align: center;
   }
 }
 /* AUTHENTICATION PAGE */

@@ -11,5 +11,12 @@
   "auth-error4": "Password too short. Minimum cdharacters(3)",
   "auth-error5": "Password must be provided.",
   "auth-error6": "Password does not match the username",
-  "auth-error7": "Something went wrong, please try again later."
+  "auth-error7": "Something went wrong, please try again later.",
+  "drop-section-1": "history",
+  "drop-section-1-link-1": "finished projects",
+  "drop-section-1-link-2": "studio",
+  "drop-section-2": "services",
+  "drop-section-2-link-1": "sound recording",
+  "drop-section-3": "post production",
+  "drop-section-4": "scenographyy"
 }

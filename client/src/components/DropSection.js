@@ -1,8 +1,8 @@
 import React from "react";
+import { Text } from "../contex/language";
 
 const DropSection = ({ name, children }) => {
   const handleDropClick = (e) => {
-    // console.log(e.target.parentElement.childNodes[1].childElementCount);
     const dropSectionEl = e.target.parentElement.childNodes[1];
     const chldElCount = e.target.parentElement.childNodes[1].childElementCount;
 
@@ -18,7 +18,7 @@ const DropSection = ({ name, children }) => {
   return (
     <div className='drop-section-container'>
       <h3 className='drop-title' onClick={handleDropClick}>
-        {name}
+        <Text text_id={name}>DEFAULT</Text>
       </h3>
       <div className='drop-section'>{children}</div>
     </div>

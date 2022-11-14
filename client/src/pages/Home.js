@@ -73,21 +73,27 @@ const Home = () => {
         </div>
       </section>
       <section className='body-section'>
-        <DropSection name='drop-section-1'>
+        <DropSection name={"drop-section-1"}>
           <Link>
-            <h3>zavrseni projekti</h3>
+            <h3>
+              <Text text_id='drop-section-1-link-1'>DEFAULT</Text>
+            </h3>
           </Link>
           <Link>
-            <h3>o studiju</h3>
+            <h3>
+              <Text text_id='drop-section-1-link-2'>DEFAULT</Text>
+            </h3>
           </Link>
         </DropSection>
-        <DropSection name='drop-section-2'>
+        <DropSection name={"drop-section-2"}>
           <Link>
-            <h3>snimanje zvuka</h3>
+            <h3>
+              <Text text_id='drop-section-2-link-1'>DEFAULT</Text>
+            </h3>
           </Link>
         </DropSection>
-        <DropSection name='drop-section-3'></DropSection>
-        <DropSection name='drop-section-4'></DropSection>
+        <DropSection name={"drop-section-3"}></DropSection>
+        <DropSection name={"drop-section-4"}></DropSection>
       </section>
     </div>
   );
