@@ -8,14 +8,10 @@ const Authenication = () => {
   // variables
   const navigate = useNavigate();
   const [input, setInput] = useState({ username: "", password: "" });
-  const { setCookie } = useContext(CookieContex);
-  const [errMsg, setErrMsg] = useState("errMsg");
+  const [errMsg, setErrMsg] = useState("");
+  const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
-  let url = window.location.href.substring(
-    0,
-    window.location.href.lastIndexOf("/")
-  );
-  // console.log(url);
+  let url = "https://secret-chamber-76247.herokuapp.com";
   // url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
@@ -26,10 +22,11 @@ const Authenication = () => {
       if (response) {
         setCookie("token", response.data.token);
         setCookie("username", response.data.username);
+        setReload(!reload);
         navigate("/");
       }
     } catch (error) {
-      // crazy stuff
+      // Ovo moram jos da sredim kada ima vise od jednog errora...
       let err = JSON.stringify(error.response.data.msg);
       err = err.substring(1, err.length - 1);
       setErrMsg(err);

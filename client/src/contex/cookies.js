@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useCookies } from "react-cookie";
 
 export const CookieContex = createContext({
@@ -7,8 +7,11 @@ export const CookieContex = createContext({
 
 export function CookieProvider({ children }) {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const [reload, setReload] = useState(false);
 
   const provider = {
+    reload,
+    setReload,
     cookies,
     setCookie,
     removeCookie,

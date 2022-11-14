@@ -7,10 +7,10 @@ import { CookieContex } from "../contex/cookies";
 
 const Home = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [userName, setUserName] = useState("joksa");
   const [authToken, setAuthToken] = useState(false);
-  const { cookies, removeCookie } = useContext(CookieContex);
+  const { reload, cookies, removeCookie } = useContext(CookieContex);
+
   // onCLick
   const handleClick = () => {
     if (!authToken) {
@@ -18,6 +18,7 @@ const Home = () => {
     } else {
       setAuthToken(false);
       removeCookie("token");
+      removeCookie("username");
     }
   };
   // useEffect
@@ -28,10 +29,10 @@ const Home = () => {
   }, []);
   useEffect(() => {
     if (cookies.token) {
-      setAuthToken(!authToken);
       setUserName(cookies.username);
+      setAuthToken(!authToken);
     }
-  }, [cookies]);
+  }, [reload]);
   return (
     <div className='home-container height-90'>
       {authToken && (
@@ -48,7 +49,15 @@ const Home = () => {
         </div>
         <div className='video-login-container center-flex'>
           <div className='video-container'>
-            <h1>video</h1>
+            <iframe
+              className='iframe-video'
+              width='560'
+              height='315'
+              src='https://www.youtube-nocookie.com/embed/als7xoyNyoE?controls=0.setVolume(0)'
+              title='YouTube video player'
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            ></iframe>
           </div>
           <div className='logo-section-right center-flex'>
             <LanguageSelector></LanguageSelector>
