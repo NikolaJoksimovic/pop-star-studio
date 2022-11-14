@@ -5,8 +5,18 @@
   --clr-primary: hsl(0, 0%, 0%);
   --clr-secondary: hsl(210, 54%, 5%);
   --clr-lamp: hsl(51, 100%, 39%);
-  --clr-font: rgb(88, 88, 88);
+  --clr-font: rgb(196, 196, 196);
   --clr-black: black;
+
+  --linear-gradient01: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  --linear-gradient02: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 02));
+  --linear-gradient03: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  --linear-gradient04: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  --linear-gradient05: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  --linear-gradient06: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  --linear-gradient07: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  --linear-gradient08: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  --linear-gradient09: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 
   --padding-btn: 0.5em;
   --padding-div: 1em;
@@ -33,6 +43,9 @@ body {
   color: var(--clr-font);
   font-family: var(--font-primary);
   background-color: var(--clr-secondary);
+
+  background: var(--linear-gradient03),
+    url("./assets/images/logo.jpg") center/cover no-repeat;
 }
 h1 {
   font-size: 1.6rem;
@@ -254,7 +267,6 @@ h5 {
   padding: 2.5em;
   position: relative;
   width: fit-content;
-
   display: grid;
 }
 .drop-section-container {
@@ -295,7 +307,17 @@ h5 {
 #auth-section {
   flex-direction: column;
 }
+#auth-section::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--linear-gradient07);
+}
 .form-container {
+  z-index: 999;
   padding: var(--padding-div);
   margin: var(--margin-div);
   width: 100%;
@@ -313,6 +335,7 @@ h5 {
   margin: 2.5em 0 0 0;
 }
 .text-container {
+  z-index: 999;
   padding: var(--padding-div);
   margin: var(--margin-div);
 }
@@ -320,13 +343,31 @@ h5 {
   max-width: 550px;
 }
 .auth-error-container {
+  z-index: 999;
   width: 80%;
   max-width: 530px;
   text-align: center;
 }
-
+#auth-section .img-container {
+  z-index: 999;
+}
+@media screen and (min-width: 1080px) {
+  #auth-section {
+    width: 50%;
+    position: relative;
+  }
+  #auth-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+}
 /* SHAREDFOOTER PAGE */
 #shared-footer {
+  position: relative;
   max-width: 290px;
   margin: auto;
   text-align: center;

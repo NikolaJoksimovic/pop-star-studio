@@ -23,7 +23,7 @@ const Authenication = () => {
         setCookie("token", response.data.token);
         setCookie("username", response.data.username);
         navigate("/");
-        setReload(true);
+        setReload(!reload);
       }
     } catch (error) {
       // Ovo moram jos da sredim kada ima vise od jednog errora...

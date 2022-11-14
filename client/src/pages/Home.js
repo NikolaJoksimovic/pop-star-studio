@@ -4,12 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { CookieContex } from "../contex/cookies";
 import LanguageSelector from "../components/LanguageSelector";
 import DropSection from "../components/DropSection";
+import { useCookies } from "react-cookie";
 
 const Home = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("joksa");
   const [authToken, setAuthToken] = useState(false);
-  const { reload, cookies, removeCookie } = useContext(CookieContex);
+  const { reload, removeCookie } = useContext(CookieContex);
+  const [newCookies] = useCookies(["user"]);
 
   // onCLick
   const handleClick = () => {
@@ -28,10 +30,9 @@ const Home = () => {
     }
   }, []);
   useEffect(() => {
-    if (cookies.token) {
-      // console.log("relaod");
-      setUserName(cookies.username);
-      setAuthToken(!authToken);
+    if (newCookies.token) {
+      setUserName(newCookies.username);
+      setAuthToken(true);
     }
   }, [reload]);
   return (
@@ -91,9 +92,19 @@ const Home = () => {
               <Text text_id='drop-section-2-link-1'>DEFAULT</Text>
             </h3>
           </Link>
+          <Link>
+            <h3>
+              <Text text_id='drop-section-2-link-2'>DEFAULT</Text>
+            </h3>
+          </Link>
+          <Link>
+            <h3>
+              <Text text_id='drop-section-2-link-3'>DEFAULT</Text>
+            </h3>
+          </Link>
         </DropSection>
-        <DropSection name={"drop-section-3"}></DropSection>
-        <DropSection name={"drop-section-4"}></DropSection>
+        <DropSection name={"dorp-section-3"}></DropSection>
+        <DropSection name={"dorp-section-4"}></DropSection>
       </section>
     </div>
   );
