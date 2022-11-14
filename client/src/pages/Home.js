@@ -77,29 +77,29 @@ const Home = () => {
         </section>
         <section className='body-section'>
           <DropSection name={"drop-section-1"}>
-            <Link>
+            <Link className='drop-link'>
               <h3>
                 <Text text_id='drop-section-1-link-1'>DEFAULT</Text>
               </h3>
             </Link>
-            <Link>
+            <Link className='drop-link'>
               <h3>
                 <Text text_id='drop-section-1-link-2'>DEFAULT</Text>
               </h3>
             </Link>
           </DropSection>
           <DropSection name={"drop-section-2"}>
-            <Link>
+            <Link className='drop-link'>
               <h3>
                 <Text text_id='drop-section-2-link-1'>DEFAULT</Text>
               </h3>
             </Link>
-            <Link>
+            <Link className='drop-link'>
               <h3>
                 <Text text_id='drop-section-2-link-2'>DEFAULT</Text>
               </h3>
             </Link>
-            <Link>
+            <Link className='drop-link'>
               <h3>
                 <Text text_id='drop-section-2-link-3'>DEFAULT</Text>
               </h3>

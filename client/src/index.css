@@ -127,6 +127,7 @@ h5 {
   }
 }
 /* HOME PAGE*/
+/* LOGO SECTION */
 #user-name {
   z-index: 999;
   position: fixed;
@@ -153,7 +154,6 @@ h5 {
   flex-direction: column;
 }
 .img-container {
-  /* border: var(--border-div); */
   margin: var(--margin-div);
   color: var(--clr-lamp);
 }
@@ -261,8 +261,7 @@ h5 {
     font-size: 1.8rem;
   }
 }
-/* HOME BODY SECTION */
-
+/*BODY SECTION */
 .body-section {
   padding: 2.5em;
   position: relative;
@@ -288,9 +287,14 @@ h5 {
   width: 100%;
   transition: var(--transition02);
 }
-.drop-section-show {
+.drop-link {
+  text-decoration: none;
+  color: var(--font-primary);
   border-top: 0.1rem solid var(--clr-font);
-  /* height: fit-content; */
+  transition: var(--transition02);
+}
+.drop-link:hover {
+  color: var(--clr-lamp);
 }
 @media screen and (min-width: 1080px) {
   .body-section {
