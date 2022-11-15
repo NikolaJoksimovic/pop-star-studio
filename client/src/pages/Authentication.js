@@ -41,7 +41,6 @@ const Authenication = () => {
     setInput({ ...input, [key]: value });
   };
 
-  console.log(errMsg);
   return (
     <section id='auth-section' className=' center-flex height-90'>
       <div className='text-container'>

@@ -77,7 +77,7 @@ const Home = () => {
         </section>
         <section className='body-section'>
           <DropSection name={"drop-section-1"}>
-            <Link className='drop-link'>
+            <Link className='drop-link' to='/projects'>
               <h3>
                 <Text text_id='drop-section-1-link-1'>DEFAULT</Text>
               </h3>
@@ -105,8 +105,8 @@ const Home = () => {
               </h3>
             </Link>
           </DropSection>
-          <DropSection name={"dorp-section-3"}></DropSection>
-          <DropSection name={"dorp-section-4"}></DropSection>
+          <DropSection name={"working on it"}></DropSection>
+          <DropSection name={"working on it"}></DropSection>
         </section>
       </div>
       <Footer></Footer>

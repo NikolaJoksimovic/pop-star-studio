@@ -21,6 +21,7 @@
   --padding-btn: 0.5em;
   --padding-div: 1em;
   --padding-input: 0.3em;
+  --padding-section: 2.5em;
 
   --margin-div: 1em;
   --margin-input: 0.5em;
@@ -32,6 +33,9 @@
   --shadow-div: 0 0 1em 0.5em var(--clr-primary);
 
   --transition02: all 0.2s linear;
+}
+html {
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
@@ -46,6 +50,8 @@ body {
 
   background: var(--linear-gradient03),
     url("./assets/images/logo.jpg") center/cover no-repeat;
+
+  min-height: 100vh;
 }
 h1 {
   font-size: 1.6rem;
@@ -61,6 +67,9 @@ h4 {
 }
 h5 {
   font-size: 0.8rem;
+}
+p {
+  font-size: 0.9rem;
 }
 .height-100 {
   min-height: 100vh;
@@ -108,6 +117,9 @@ h5 {
   h5 {
     font-size: 1.1rem;
   }
+  p {
+    font-size: 1.1rem;
+  }
 }
 @media screen and (min-width: 1180px) {
   h1 {
@@ -123,6 +135,9 @@ h5 {
     font-size: 1.5rem;
   }
   h5 {
+    font-size: 1.3rem;
+  }
+  p {
     font-size: 1.3rem;
   }
 }
@@ -263,7 +278,7 @@ h5 {
 }
 /*BODY SECTION */
 .body-section {
-  padding: 2.5em;
+  padding: var(--padding-section);
   position: relative;
   width: fit-content;
   display: grid;
@@ -286,6 +301,9 @@ h5 {
   overflow: hidden;
   width: 100%;
   transition: var(--transition02);
+}
+.drop-section-show {
+  background-color: var(--clr-primary);
 }
 .drop-link {
   text-decoration: none;
@@ -369,6 +387,43 @@ h5 {
     height: 100vh;
   }
 }
+
+/* FINISHED PROJECTS PAGE */
+#finished-projects {
+  background-color: aqua;
+  background: var(--linear-gradient07),
+    url("./assets/images/finished_projects.jpg") center/cover no-repeat;
+}
+.projects-container {
+  display: grid;
+  gap: 3.5em;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+
+  padding: var(--padding-section);
+}
+.project-item-container {
+  flex-direction: column;
+  padding: var(--padding-div);
+  width: 100%;
+  max-width: 400px;
+  height: fit-content;
+
+  background-color: var(--clr-secondary);
+}
+.project-item-img-container {
+  width: 90%;
+  max-width: 300px;
+  width: 100%;
+}
+.project-item-img-container img {
+  width: 100%;
+  height: 100%;
+}
+.project-item-desc {
+  padding: var(--padding-div);
+}
+
 /* SHAREDFOOTER PAGE */
 #shared-footer {
   z-index: 999;

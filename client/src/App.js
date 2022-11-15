@@ -3,6 +3,7 @@ import { LanguageProvider } from "./contex/language";
 import { CookieProvider } from "./contex/cookies";
 import Home from "./pages/Home";
 import Authenication from "./pages/Authentication";
+import FinishedProjects from "./pages/FinishedProjects";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
             <Route
               path='/auth'
               element={<Authenication></Authenication>}
+            ></Route>
+            <Route
+              path='/projects'
+              element={<FinishedProjects></FinishedProjects>}
             ></Route>
           </Routes>
         </Router>

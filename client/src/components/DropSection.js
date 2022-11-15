@@ -10,7 +10,7 @@ const DropSection = ({ name, children }) => {
       dropSectionEl.style.height = `0px`;
     } else {
       dropSectionEl.style.height = `${
-        dropSectionEl.parentElement.offsetHeight * chldElCount
+        dropSectionEl.parentElement.offsetHeight * chldElCount + 2 * chldElCount
       }px`;
     }
     dropSectionEl.classList.toggle("drop-section-show");
