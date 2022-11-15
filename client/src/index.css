@@ -390,40 +390,50 @@ p {
 
 /* FINISHED PROJECTS PAGE */
 #finished-projects {
-  background-color: aqua;
-  background: var(--linear-gradient07),
-    url("./assets/images/finished_projects.jpg") center/cover no-repeat;
+  padding: var(--padding-section);
+  background: var(--linear-gradient05),
+    url("./assets/images/finished_projects_2.jpg") center/cover no-repeat;
 }
 .projects-container {
-  display: grid;
-  gap: 3.5em;
-  grid-template-columns: repeat(auto-fill, 300px);
-  justify-content: center;
-
-  padding: var(--padding-section);
+  columns: 1;
+  column-gap: 1em;
 }
 .project-item-container {
+  cursor: pointer;
+  max-width: 350px;
   flex-direction: column;
-  padding: var(--padding-div);
-  width: 100%;
-  max-width: 400px;
-  height: fit-content;
+  overflow-y: auto;
 
-  background-color: var(--clr-secondary);
-}
-.project-item-img-container {
-  width: 90%;
-  max-width: 300px;
-  width: 100%;
-}
-.project-item-img-container img {
-  width: 100%;
-  height: 100%;
-}
-.project-item-desc {
+  margin: 0 auto 2em auto;
   padding: var(--padding-div);
-}
+  background-color: var(--clr-primary);
+  transition: var(--transition02);
 
+  text-align: center;
+}
+.project-item-title {
+  color: var(--clr-lamp);
+}
+.project-item-link {
+  text-decoration: none;
+  color: var(--font-primary);
+}
+@media screen and (min-width: 1000px) {
+  .projects-container {
+    columns: 2;
+  }
+  .project-item-container {
+    opacity: 0.8;
+  }
+  .project-item-container:hover {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .projects-container {
+    columns: 3;
+  }
+}
 /* SHAREDFOOTER PAGE */
 #shared-footer {
   z-index: 999;

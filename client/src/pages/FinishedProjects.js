@@ -24,7 +24,7 @@ const FinishedProjects = () => {
           return <ProjectItem key={item.title} info={info}></ProjectItem>;
         })}
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </section>
   );
 };
