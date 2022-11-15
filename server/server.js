@@ -18,6 +18,11 @@ app.use(cors());
 app.use("/", mainRouter);
 app.use("/auth", authRouter);
 
+// Refresh Cannot GET solution
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/public/build/index.html");
+});
+
 //middleware
 app.use(errorHandlerMiddleware);
 

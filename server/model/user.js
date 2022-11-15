@@ -10,15 +10,15 @@ const userSchema = mongoose.Schema({
   },
   username: {
     type: String,
-    minlength: [3, "auth-error1"],
-    maxlength: [15, "auth-error2"],
+    minlength: [3, "auth-error1\n"],
+    maxlength: [15, "auth-error2\n"],
     unique: true,
-    required: [true, "auth-error3"],
+    required: [true, "auth-error3\n"],
   },
   password: {
     type: String,
-    minlength: [3, "auth-error4"],
-    required: [true, "auth-error5"],
+    minlength: [3, "auth-error4\n"],
+    required: [true, "auth-error5\n"],
   },
 });
 

@@ -9,11 +9,11 @@ const Authenication = () => {
   // variables
   const navigate = useNavigate();
   const [input, setInput] = useState({ username: "", password: "" });
-  const [errMsg, setErrMsg] = useState("");
+  const [errMsg, setErrMsg] = useState(null);
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
   let url = "https://secret-chamber-76247.herokuapp.com";
-  // url = "http://localhost:8000";
+  url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
@@ -28,9 +28,11 @@ const Authenication = () => {
       }
     } catch (error) {
       // Ovo moram jos da sredim kada ima vise od jednog errora...
-      let err = JSON.stringify(error.response.data.msg);
-      err = err.substring(1, err.length - 1);
-      setErrMsg(err);
+      let errors = error.response.data.msg.split("\n");
+      errors.map((err) => {
+        return (err = JSON.stringify(err));
+      });
+      setErrMsg(errors.slice(0, errors.length - 1));
     }
   };
   const handleChange = (e) => {
@@ -38,6 +40,8 @@ const Authenication = () => {
     const value = e.target.value;
     setInput({ ...input, [key]: value });
   };
+
+  console.log(errMsg);
   return (
     <section id='auth-section' className=' center-flex height-90'>
       <div className='text-container'>
@@ -64,10 +68,14 @@ const Authenication = () => {
             onChange={handleChange}
           />
           <div className='auth-error-container'>
-            <h4>
-              <Text text_id={errMsg}>DEFAULT</Text>
-              {/* <Text text_id='auth-error2'>DEFAULT</Text> */}
-            </h4>
+            {errMsg?.map((err) => {
+              return (
+                <h4 key={err}>
+                  <Text text_id={err}>DEFAULT</Text>
+                  <br />
+                </h4>
+              );
+            })}
           </div>
           <button type='submit' className='primary-btn' onClick={handleClick}>
             <Text text_id='auth-btn'>DEFAULT</Text>
