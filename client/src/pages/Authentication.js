@@ -13,7 +13,7 @@ const Authenication = () => {
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
   let url = "https://secret-chamber-76247.herokuapp.com";
-  url = "http://localhost:8000";
+  // url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
     e.preventDefault();

@@ -50,7 +50,7 @@ body {
 
   background: var(--linear-gradient03),
     url("./assets/images/logo.jpg") center/cover no-repeat;
-
+  background-attachment: fixed;
   min-height: 100vh;
 }
 h1 {
@@ -393,6 +393,7 @@ p {
   padding: var(--padding-section);
   background: var(--linear-gradient05),
     url("./assets/images/finished_projects_2.jpg") center/cover no-repeat;
+  background-attachment: fixed;
 }
 .projects-container {
   columns: 1;
@@ -443,4 +444,12 @@ p {
   margin: auto;
   text-align: center;
   padding: var(--padding-div);
+}
+
+@media screen and (min-width: 1080px) {
+  #shared-footer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
