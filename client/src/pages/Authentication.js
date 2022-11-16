@@ -42,47 +42,49 @@ const Authenication = () => {
   };
 
   return (
-    <section id='auth-section' className=' center-flex height-90'>
-      <div className='text-container'>
-        <h1>
-          <Text text_id='auth-h1'>DEFAULT</Text>
-        </h1>
-      </div>
-      <div className='form-container'>
-        <form action='' className='center-flex'>
-          <label htmlFor='username-input'>username</label>
-          <input
-            name='username'
-            id='username-input'
-            type='text'
-            value={input.username}
-            onChange={handleChange}
-          />
-          <label htmlFor='password-input'>password</label>
-          <input
-            name='password'
-            id='password-input'
-            type='password'
-            value={input.password}
-            onChange={handleChange}
-          />
-          <div className='auth-error-container'>
-            {errMsg?.map((err) => {
-              return (
-                <h4 key={err}>
-                  <Text text_id={err}>DEFAULT</Text>
-                  <br />
-                </h4>
-              );
-            })}
-          </div>
-          <button type='submit' className='primary-btn' onClick={handleClick}>
-            <Text text_id='auth-btn'>DEFAULT</Text>
-          </button>
-        </form>
-      </div>
-      <div className='img-container'>
-        <h2>LOGO POP STAR STUDIO</h2>
+    <section id='auth-section'>
+      <div className='auth-body height-90 center-flex '>
+        <div className='text-container'>
+          <h1>
+            <Text text_id='auth-h1'>DEFAULT</Text>
+          </h1>
+        </div>
+        <div className='form-container'>
+          <form action='' className='center-flex'>
+            <label htmlFor='username-input'>username</label>
+            <input
+              name='username'
+              id='username-input'
+              type='text'
+              value={input.username}
+              onChange={handleChange}
+            />
+            <label htmlFor='password-input'>password</label>
+            <input
+              name='password'
+              id='password-input'
+              type='password'
+              value={input.password}
+              onChange={handleChange}
+            />
+            <div className='auth-error-container'>
+              {errMsg?.map((err) => {
+                return (
+                  <h4 key={err}>
+                    <Text text_id={err}>DEFAULT</Text>
+                    <br />
+                  </h4>
+                );
+              })}
+            </div>
+            <button type='submit' className='primary-btn' onClick={handleClick}>
+              <Text text_id='auth-btn'>DEFAULT</Text>
+            </button>
+          </form>
+        </div>
+        <div className='img-container'>
+          <h2>LOGO POP STAR STUDIO</h2>
+        </div>
       </div>
       <Footer></Footer>
     </section>

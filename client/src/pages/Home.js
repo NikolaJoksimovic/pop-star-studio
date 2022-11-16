@@ -6,6 +6,8 @@ import LanguageSelector from "../components/LanguageSelector";
 import DropSection from "../components/DropSection";
 import { useCookies } from "react-cookie";
 import Footer from "../components/Footer";
+import { ImInstagram, ImYoutube2 } from "react-icons/im";
+import { GrFacebook, GrLinkedin } from "react-icons/gr";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -50,6 +52,25 @@ const Home = () => {
         <section className='logo-section center-flex'>
           <div className='img-container'>
             <h2>LOGO POP STAR STUDIO</h2>
+            <div className='socials center-flex'>
+              <a
+                id='instagram'
+                href='https://instagram.com/pangolier322?igshid=YmMyMTA2M2Y='
+                target='_blank'
+              >
+                <ImInstagram></ImInstagram>
+              </a>
+              <a
+                id='youtube'
+                href='https://www.youtube.com/user/LUKA17000'
+                target='_blank'
+              >
+                <ImYoutube2></ImYoutube2>
+              </a>
+              <a id='facebook' href='' target='_blank'>
+                <GrFacebook></GrFacebook>
+              </a>
+            </div>
           </div>
           <div className='video-login-container center-flex'>
             <div className='video-container'>
