@@ -16,7 +16,7 @@ const Home = () => {
   const [authToken, setAuthToken] = useState(false);
   const { reload, removeCookie } = useContext(CookieContex);
   const [newCookies] = useCookies(["user"]);
-  const [phoneMenuPos, setPhoneMenuPos] = useState("left");
+  const [phoneMenuPos, setPhoneMenuPos] = useState("right");
 
   // onCLick
   const handleClick = () => {
@@ -28,14 +28,35 @@ const Home = () => {
       removeCookie("username");
     }
   };
+  const handleShowMenu = () => {
+    document
+      .querySelector(".body-section")
+      .classList.toggle("body-section-show");
+  };
+  const handleMenuSwitchSides = () => {
+    const element = document.getElementById("phone-menu-btn");
+    const menuSwitchIcon = document.getElementById("menu-switch-icon");
+    if (window.localStorage.getItem("menu-pos") === "right") {
+      window.localStorage.setItem("menu-pos", "left");
+      element.style.removeProperty("right");
+      element.style.left = "0";
+      menuSwitchIcon.classList.add("icon-left");
+    } else {
+      window.localStorage.setItem("menu-pos", "right");
+      element.style.removeProperty("left");
+      element.style.right = "0";
+      menuSwitchIcon.classList.remove("icon-left");
+    }
+  };
   // useEffect
   useEffect(() => {
     if (!window.localStorage.getItem("lang-opt")) {
       window.localStorage.setItem("lang-opt", "en");
     }
     if (!window.localStorage.getItem("menu-pos")) {
-      window.localStorage.setItem("menu-pos", "left");
+      window.localStorage.setItem("menu-pos", "right");
     }
+    handleMenuSwitchSides();
   }, []);
   useEffect(() => {
     if (newCookies.token) {
@@ -90,10 +111,10 @@ const Home = () => {
               ></iframe>
             </div>
             <div id='phone-menu-btn'>
-              <button>
+              <button onClick={handleShowMenu}>
                 <HiOutlineMenu></HiOutlineMenu>
               </button>
-              <button>
+              <button id='menu-switch-icon' onClick={handleMenuSwitchSides}>
                 <HiChevronDoubleLeft></HiChevronDoubleLeft>
               </button>
             </div>

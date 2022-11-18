@@ -53,6 +53,11 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
 }
+@media screen and (max-width: 500px) {
+  body {
+    background: var(--clr-primary);
+  }
+}
 h1 {
   font-size: 1.6rem;
 }
@@ -206,7 +211,7 @@ p {
   top: 50%;
   right: 0;
   height: 5em;
-  min-width: 4em;
+  width: 4em;
   background: var(--clr-primary);
 }
 #phone-menu-btn button {
@@ -218,6 +223,13 @@ p {
   color: var(--clr-lamp);
   font-weight: 900;
   border-color: var(--clr-lamp);
+}
+#phone-menu-btn .menu-switch-btn {
+  transform: rotate(0);
+  transition: var(--transition02);
+}
+.icon-left {
+  transform: rotate(180deg);
 }
 @media screen and (max-width: 500px) {
   #phone-menu-btn {
@@ -358,8 +370,29 @@ p {
 }
 @media screen and (max-width: 500px) {
   .body-section {
-    position: absolute;
     display: none;
+    position: fixed;
+    top: 15%;
+    left: 4em;
+    width: calc(100vw - 8em);
+    background: var(--clr-primary);
+    z-index: 999;
+    height: 70%;
+    overflow-y: scroll;
+    border: var(--border-div);
+    border-color: var(--clr-lamp);
+  }
+  .body-section-show {
+    display: block;
+  }
+  .drop-section-container {
+    border-bottom: 0.1em solid var(--clr-lamp);
+  }
+  .drop-link {
+    border-color: var(--clr-lamp);
+  }
+  .body-section h3 {
+    text-align: center;
   }
 }
 @media screen and (min-width: 1080px) {
@@ -495,9 +528,4 @@ p {
   margin: auto;
   text-align: center;
   padding: var(--padding-div);
-}
-@media screen and (max-width: 500px) {
-  body {
-    background: var(--clr-primary);
-  }
 }
