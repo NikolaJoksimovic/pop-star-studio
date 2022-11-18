@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ProjectItem from "../components/ProjectItem";
 import data from "../projects/projects.json";
@@ -8,7 +7,7 @@ const FinishedProjects = () => {
 
   useEffect(() => {
     setProjects(data);
-  }, [data]);
+  }, []);
 
   return (
     <section id='finished-projects' className='height-100'>

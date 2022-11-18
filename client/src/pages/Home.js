@@ -7,7 +7,7 @@ import DropSection from "../components/DropSection";
 import { useCookies } from "react-cookie";
 import Footer from "../components/Footer";
 import { ImInstagram, ImYoutube2 } from "react-icons/im";
-import { GrFacebook, GrLinkedin } from "react-icons/gr";
+import { GrFacebook } from "react-icons/gr";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const Home = () => {
   const [authToken, setAuthToken] = useState(false);
   const { reload, removeCookie } = useContext(CookieContex);
   const [newCookies] = useCookies(["user"]);
+  const [phoneMenuPos, setPhoneMenuPos] = useState("left");
 
   // onCLick
   const handleClick = () => {
@@ -31,13 +32,16 @@ const Home = () => {
     if (!window.localStorage.getItem("lang-opt")) {
       window.localStorage.setItem("lang-opt", "en");
     }
+    if (!window.localStorage.getItem("menu-pos")) {
+      window.localStorage.setItem("menu-pos", "left");
+    }
   }, []);
   useEffect(() => {
     if (newCookies.token) {
       setUserName(newCookies.username);
       setAuthToken(true);
     }
-  }, [reload]);
+  }, [reload, newCookies.token, newCookies.username]);
   return (
     <>
       <div className='home-container height-90'>
@@ -83,6 +87,10 @@ const Home = () => {
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               ></iframe>
+            </div>
+            <div id='phone-menu-btn'>
+              <button>menu btn</button>
+              <button>switch pos btn</button>
             </div>
             <div className='logo-section-right center-flex'>
               <LanguageSelector></LanguageSelector>
