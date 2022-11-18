@@ -18,6 +18,8 @@ const Home = () => {
   const [newCookies] = useCookies(["user"]);
   const [phoneMenuPos, setPhoneMenuPos] = useState("right");
 
+  // elemens
+
   // onCLick
   const handleClick = () => {
     if (!authToken) {
@@ -33,20 +35,28 @@ const Home = () => {
       .querySelector(".body-section")
       .classList.toggle("body-section-show");
   };
-  const handleMenuSwitchSides = () => {
+  const menuSwitchSide = () => {
     const element = document.getElementById("phone-menu-btn");
     const menuSwitchIcon = document.getElementById("menu-switch-icon");
     if (window.localStorage.getItem("menu-pos") === "right") {
-      window.localStorage.setItem("menu-pos", "left");
-      element.style.removeProperty("right");
-      element.style.left = "0";
-      menuSwitchIcon.classList.add("icon-left");
-    } else {
-      window.localStorage.setItem("menu-pos", "right");
       element.style.removeProperty("left");
       element.style.right = "0";
       menuSwitchIcon.classList.remove("icon-left");
+    } else {
+      element.style.removeProperty("left");
+      element.style.left = "0";
+      menuSwitchIcon.classList.add("icon-left");
     }
+  };
+  const handleMenuSwitchSides = () => {
+    if (phoneMenuPos === "right") {
+      window.localStorage.setItem("menu-pos", "left");
+      setPhoneMenuPos("left");
+    } else {
+      window.localStorage.setItem("menu-pos", "right");
+      setPhoneMenuPos("right");
+    }
+    menuSwitchSide();
   };
   // useEffect
   useEffect(() => {
@@ -55,8 +65,9 @@ const Home = () => {
     }
     if (!window.localStorage.getItem("menu-pos")) {
       window.localStorage.setItem("menu-pos", "right");
+      setPhoneMenuPos("right");
     }
-    handleMenuSwitchSides();
+    menuSwitchSide();
   }, []);
   useEffect(() => {
     if (newCookies.token) {
