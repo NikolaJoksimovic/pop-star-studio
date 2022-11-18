@@ -8,6 +8,7 @@ import { useCookies } from "react-cookie";
 import Footer from "../components/Footer";
 import { ImInstagram, ImYoutube2 } from "react-icons/im";
 import { GrFacebook } from "react-icons/gr";
+import { HiChevronDoubleLeft, HiOutlineMenu } from "react-icons/hi";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -89,8 +90,12 @@ const Home = () => {
               ></iframe>
             </div>
             <div id='phone-menu-btn'>
-              <button>menu btn</button>
-              <button>switch pos btn</button>
+              <button>
+                <HiOutlineMenu></HiOutlineMenu>
+              </button>
+              <button>
+                <HiChevronDoubleLeft></HiChevronDoubleLeft>
+              </button>
             </div>
             <div className='logo-section-right center-flex'>
               <LanguageSelector></LanguageSelector>

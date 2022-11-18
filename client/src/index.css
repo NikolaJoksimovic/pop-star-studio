@@ -200,16 +200,28 @@ p {
 /* menu btn added 18.11.2022 */
 #phone-menu-btn {
   display: none;
+  flex-direction: column;
+  position: fixed;
+
+  top: 50%;
+  right: 0;
+  height: 5em;
+  min-width: 4em;
+  background: var(--clr-primary);
+}
+#phone-menu-btn button {
+  height: 50%;
+  font-size: 1.6em;
+  width: auto;
+  background-color: transparent;
+  border: var(--border-btn);
+  color: var(--clr-lamp);
+  font-weight: 900;
+  border-color: var(--clr-lamp);
 }
 @media screen and (max-width: 500px) {
   #phone-menu-btn {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    height: 5em;
-    width: 4em;
-    background: var(--clr-lamp);
+    display: flex;
   }
 }
 .logo-section-right {
