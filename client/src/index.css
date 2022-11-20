@@ -204,11 +204,12 @@ p {
 }
 /* menu btn added 18.11.2022 */
 #phone-menu-btn {
+  z-index: 999;
   display: none;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
 
-  top: 50%;
+  top: 70%;
   right: 0;
   height: 5em;
   width: 4em;
