@@ -108,16 +108,6 @@ const Home = () => {
             </div>
           </div>
           <div className='video-login-container center-flex'>
-            <div className='phone-menu-btn-container'>
-              <div id='phone-menu-btn'>
-                <button onClick={handleShowMenu} className='center-flex'>
-                  <HiOutlineMenu></HiOutlineMenu>
-                </button>
-                <button className='center-flex' onClick={handleMenuSwitchSides}>
-                  <HiChevronDoubleLeft id='menu-switch-icon'></HiChevronDoubleLeft>
-                </button>
-              </div>
-            </div>
             <div className='video-container'>
               <iframe
                 className='iframe-video'
@@ -128,6 +118,17 @@ const Home = () => {
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               ></iframe>
+            </div>
+
+            <div className='phone-menu-btn-container'>
+              <div id='phone-menu-btn'>
+                <button onClick={handleShowMenu} className='center-flex'>
+                  <HiOutlineMenu></HiOutlineMenu>
+                </button>
+                <button className='center-flex' onClick={handleMenuSwitchSides}>
+                  <HiChevronDoubleLeft id='menu-switch-icon'></HiChevronDoubleLeft>
+                </button>
+              </div>
             </div>
 
             <div className='logo-section-right center-flex'>

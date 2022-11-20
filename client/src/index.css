@@ -47,7 +47,7 @@ body {
   color: var(--clr-font);
   font-family: var(--font-primary);
   background-color: var(--clr-secondary);
-  /* background */
+
   background: var(--linear-gradient03),
     url("./assets/images/logo.jpg") center/cover no-repeat;
   background-attachment: fixed;
@@ -202,12 +202,17 @@ p {
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 500px) {
+  .video-login-container {
+    overflow: hidden;
+  }
+}
 /* menu btn added 18.11.2022 */
 .phone-menu-btn-container {
   display: none;
   width: 100%;
   z-index: 999;
-  position: absolute;
+  position: relative;
   top: 70%;
   right: 0;
   transition: var(--transition02);
