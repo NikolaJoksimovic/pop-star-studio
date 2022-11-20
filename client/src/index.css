@@ -204,6 +204,7 @@ p {
 }
 /* menu btn added 18.11.2022 */
 .phone-menu-btn-container {
+  display: none;
   width: 100%;
   z-index: 999;
   position: absolute;
@@ -238,6 +239,9 @@ p {
   transform: rotate(180deg);
 }
 @media screen and (max-width: 500px) {
+  #phone-menu-btn-container {
+    display: block;
+  }
   #phone-menu-btn {
     display: flex;
   }
