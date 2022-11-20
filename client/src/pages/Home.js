@@ -36,15 +36,13 @@ const Home = () => {
       .classList.toggle("body-section-show");
   };
   const menuSwitchSide = () => {
-    const element = document.getElementById("phone-menu-btn");
+    const element = document.querySelector(".phone-menu-btn-container");
     const menuSwitchIcon = document.getElementById("menu-switch-icon");
     if (window.localStorage.getItem("menu-pos") === "right") {
-      element.style.removeProperty("left");
-      element.style.right = "0";
+      element.style.transform = "translateX(calc(100% - 4em))";
       menuSwitchIcon.classList.remove("icon-left");
     } else {
-      element.style.removeProperty("left");
-      element.style.left = "0";
+      element.style.transform = "translateX(0%)";
       menuSwitchIcon.classList.add("icon-left");
     }
   };
@@ -110,17 +108,15 @@ const Home = () => {
             </div>
           </div>
           <div className='video-login-container center-flex'>
-            <div id='phone-menu-btn'>
-              <button onClick={handleShowMenu} className='center-flex'>
-                <HiOutlineMenu></HiOutlineMenu>
-              </button>
-              <button
-                id='menu-switch-icon'
-                className='center-flex'
-                onClick={handleMenuSwitchSides}
-              >
-                <HiChevronDoubleLeft></HiChevronDoubleLeft>
-              </button>
+            <div className='phone-menu-btn-container'>
+              <div id='phone-menu-btn'>
+                <button onClick={handleShowMenu} className='center-flex'>
+                  <HiOutlineMenu></HiOutlineMenu>
+                </button>
+                <button className='center-flex' onClick={handleMenuSwitchSides}>
+                  <HiChevronDoubleLeft id='menu-switch-icon'></HiChevronDoubleLeft>
+                </button>
+              </div>
             </div>
             <div className='video-container'>
               <iframe

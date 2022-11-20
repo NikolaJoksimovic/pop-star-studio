@@ -203,14 +203,16 @@ p {
   height: 100%;
 }
 /* menu btn added 18.11.2022 */
-#phone-menu-btn {
+.phone-menu-btn-container {
+  width: 100%;
   z-index: 999;
-  display: none;
-  flex-direction: column;
   position: absolute;
-
   top: 70%;
   right: 0;
+  transition: var(--transition02);
+}
+#phone-menu-btn {
+  flex-direction: column;
   height: 5em;
   width: 4em;
   background: var(--clr-primary);
@@ -225,8 +227,11 @@ p {
   font-weight: 900;
   border-color: var(--clr-lamp);
 }
-#phone-menu-btn .menu-switch-btn {
+#phone-menu-btn #menu-switch-btn {
   transform: rotate(0);
+  transition: var(--transition02);
+}
+#menu-switch-icon {
   transition: var(--transition02);
 }
 .icon-left {
@@ -364,6 +369,7 @@ p {
   text-decoration: none;
   color: var(--font-primary);
   transition: var(--transition02);
+  border-top: 0.15rem solid var(--clr-font);
 }
 .drop-link:hover {
   color: var(--clr-lamp);
@@ -395,6 +401,9 @@ p {
   .drop-section-container h3 {
     border-bottom: 0.15rem solid var(--clr-font);
     border-color: var(--clr-lamp);
+  }
+  .drop-link {
+    border: none;
   }
 }
 @media screen and (min-width: 1080px) {
@@ -458,6 +467,11 @@ p {
 }
 #auth-section .img-container {
   z-index: 999;
+}
+@media screen and (max-width: 500px) {
+  #auth-section {
+    background: url("./assets/images/logo.jpg") center/cover no-repeat;
+  }
 }
 @media screen and (min-width: 1080px) {
   #auth-section {
