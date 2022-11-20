@@ -239,7 +239,7 @@ p {
   transform: rotate(180deg);
 }
 @media screen and (max-width: 500px) {
-  #phone-menu-btn-container {
+  .phone-menu-btn-container {
     display: block;
   }
   #phone-menu-btn {
