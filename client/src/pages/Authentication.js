@@ -12,7 +12,7 @@ const Authenication = () => {
   const [errMsg, setErrMsg] = useState(null);
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
-  let url = "https://secret-chamber-76247.herokuapp.com";
+  let url = "https://pop-star-stuido.onrender.com";
   // url = "http://localhost:8000";
   // functions
   const handleClick = async (e) => {
