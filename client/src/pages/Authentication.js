@@ -13,15 +13,13 @@ const Authenication = () => {
   const [errMsg, setErrMsg] = useState(null);
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
-  const url = urls.production;
+  const url = urls.testing;
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${url}/auth/createlogin`, input, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await axios.post(`${url}/auth/createlogin`, input);
       if (response) {
         setCookie("token", response.data.token);
         setCookie("username", response.data.username);

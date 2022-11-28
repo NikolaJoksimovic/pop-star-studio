@@ -28,8 +28,6 @@ const createLoginUser = async (req, res) => {
 
   const token = user.getJWToken();
 
-  res.send("hey");
-
   res
     .status(StatusCodes.CREATED)
     .json({ username: user.username, token: token });
