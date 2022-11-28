@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { CookieContex } from "../contex/cookies";
 import axios from "axios";
 import Footer from "../components/Footer";
+import urls from "../urls/urls.json";
 
 const Authenication = () => {
   // variables
@@ -12,14 +13,15 @@ const Authenication = () => {
   const [errMsg, setErrMsg] = useState(null);
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
-  let url = "https://pop-star-stuido.onrender.com";
-  // url = "http://localhost:8000";
+  const url = urls.production;
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${url}/auth/createlogin`, input);
+      const response = await axios.post(`${url}/auth/createlogin`, input, {
+        headers: { "Content-Type": "application/json" },
+      });
       if (response) {
         setCookie("token", response.data.token);
         setCookie("username", response.data.username);
@@ -33,6 +35,7 @@ const Authenication = () => {
         return (err = JSON.stringify(err));
       });
       setErrMsg(errors.slice(0, errors.length - 1));
+      console.log(error);
     }
   };
   const handleChange = (e) => {

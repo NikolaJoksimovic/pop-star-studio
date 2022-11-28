@@ -37,7 +37,7 @@ userSchema.methods.getJWToken = function () {
     { id: this.user_id, username: this.username },
     process.env.JWT_SECRET,
     {
-      expiresIn: process.env.JWT_LIFESPAN,
+      expiresIn: `30d`,
     }
   );
 };

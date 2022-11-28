@@ -12,7 +12,7 @@ import { HiChevronDoubleLeft, HiOutlineMenu } from "react-icons/hi";
 
 const Home = () => {
   const navigate = useNavigate();
-  const [userName, setUserName] = useState("joksa");
+  const [userName, setUserName] = useState("");
   const [authToken, setAuthToken] = useState(false);
   const { reload, removeCookie } = useContext(CookieContex);
   const [newCookies] = useCookies(["user"]);
