@@ -13,7 +13,7 @@ const Authenication = () => {
   const [errMsg, setErrMsg] = useState(null);
   const { reload, setReload, setCookie } = useContext(CookieContex);
   // URL
-  const url = urls.testing;
+  const url = urls.production;
   // functions
   const handleClick = async (e) => {
     e.preventDefault();
